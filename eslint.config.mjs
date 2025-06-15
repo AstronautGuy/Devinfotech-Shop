@@ -11,6 +11,13 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    // ⬇️ THIS BLOCK is needed to enable disable-comments
+    linterOptions: {
+      allowInlineConfig: true,
+      reportUnusedDisableDirectives: false,
+    },
+  },
 ];
 
 export default eslintConfig;
